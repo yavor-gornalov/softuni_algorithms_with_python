@@ -12,9 +12,8 @@ graph = []
 [graph.append([]) for _ in range(nodes_count + 1)]
 
 for _ in range(edges_count):
-    first, second = [int(x) for x in input().split()]
-    graph[first].append(second)
-    graph[second].append(first)
+    source, destination = [int(x) for x in input().split()]
+    graph[source].append(destination)
 
 start_node = int(input())
 end_node = int(input())
