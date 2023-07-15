@@ -11,5 +11,6 @@ numbers = [int(x) for x in input().split(", ")]
 result = []
 generate_subsets(numbers, [], result)
 
-for line in sorted(result, key=len):
-    print(" ".join(str(d) for d in line))
+result.sort(key=len)
+for line in result:
+    print(*line, sep=" ")
