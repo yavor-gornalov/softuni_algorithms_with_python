@@ -4,12 +4,10 @@ from collections import deque
 
 
 def construct_graph(nodes, edges):
-    graph = []
-    [graph.append([]) for _ in range(nodes + 1)]
-
+    graph = [[0] * (nodes + 1) for _ in range(nodes + 1)]
     for _ in range(edges):
         source, destination = [int(x) for x in input().split()]
-        graph[source].append(destination)
+        graph[source][destination] = 1
 
     return graph
 
@@ -18,33 +16,24 @@ def graph_shortest_path(start, target, graph):
     visited = [False] * len(graph)
     path = []
 
-    visited[start] = True
     target_found = False
     queue = deque([start])
     # BFS
     while queue:
         node = queue.popleft()
+        visited[node] = True
 
         if not target_found:
             path.append(node)
             target_found = node == target
 
-        for child in graph[node]:
-            if not visited[child]:
+        for child in range(len(graph[node])):
+            if graph[node][child] != 0 and not visited[child]:
                 visited[child] = True
                 queue.append(child)
 
     print(*path)
     print(*[idx for idx in range(1, len(visited)) if not visited[idx]])
-
-
-def get_inaccessible_nodes(visited):
-    inaccessible_nodes = []
-    for node in range(1, len(visited)):
-        if not visited[node]:
-            inaccessible_nodes.append(node)
-
-    return inaccessible_nodes
 
 
 nodes_count = int(input())
