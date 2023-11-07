@@ -1,5 +1,5 @@
 # Algorithms with Python
-This repository contains exercises solved during the "Algorithms with Python" open course at Softuni. Exercises are divided into separate files, prepared for testing in Judge system.lems explanations, could be accessed, after registration on this [LINK](https://judge.softuni.org/Contests#!/List/ByCategory/350/Algorithms-with-Python).
+This repository contains exercises solved during the "Algorithms with Python" open course at Softuni. Exercises are divided into separate files, prepared for testing in Judge system.Problems explanations, could be accessed, after registration on this [LINK](https://judge.softuni.org/Contests#!/List/ByCategory/350/Algorithms-with-Python).
 
 ### Contents:
 **I. Algorithms Fundamentals - Exercises**
